@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-24T22:04:06 GMT+07:00" name="Surefire suite" finished-at="2026-05-24T22:04:14 GMT+07:00" duration-ms="8768">
+    <groups>
+    </groups>
+    <test started-at="2026-05-24T22:04:06 GMT+07:00" name="Surefire test" finished-at="2026-05-24T22:04:14 GMT+07:00" duration-ms="8768">
+      <class name="com.mycompany.app.AppTest">
+        <test-method signature="shouldAnswerWithTrue()[pri:0, instance:com.mycompany.app.AppTest@3d36e4cd]" started-at="2026-05-24T22:04:06 GMT+07:00" name="shouldAnswerWithTrue" finished-at="2026-05-24T22:04:06 GMT+07:00" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldAnswerWithTrue -->
+      </class> <!-- com.mycompany.app.AppTest -->
+      <class name="tests.ui.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.LoginTest@4d339552]" started-at="2026-05-24T22:04:06 GMT+07:00" name="setUp" finished-at="2026-05-24T22:04:09 GMT+07:00" duration-ms="3003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginSuccess()[pri:0, instance:tests.ui.LoginTest@4d339552]" started-at="2026-05-24T22:04:09 GMT+07:00" name="testLoginSuccess" finished-at="2026-05-24T22:04:10 GMT+07:00" duration-ms="1644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginSuccess -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ui.LoginTest@4d339552]" started-at="2026-05-24T22:04:10 GMT+07:00" name="tearDown" finished-at="2026-05-24T22:04:11 GMT+07:00" duration-ms="335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ui.LoginTest -->
+      <class name="tests.ui.SampleTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.SampleTest@41ee392b]" started-at="2026-05-24T22:04:11 GMT+07:00" name="setUp" finished-at="2026-05-24T22:04:12 GMT+07:00" duration-ms="1850" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testGoogle()[pri:0, instance:tests.ui.SampleTest@41ee392b]" started-at="2026-05-24T22:04:12 GMT+07:00" name="testGoogle" finished-at="2026-05-24T22:04:14 GMT+07:00" duration-ms="1611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoogle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ui.SampleTest@41ee392b]" started-at="2026-05-24T22:04:14 GMT+07:00" name="tearDown" finished-at="2026-05-24T22:04:14 GMT+07:00" duration-ms="249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ui.SampleTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
