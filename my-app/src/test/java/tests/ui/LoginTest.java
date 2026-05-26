@@ -1,29 +1,20 @@
 package tests.ui;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.Test;
-
 import base.BaseTest;
-import driver.DriverManager;
+import org.testng.annotations.Test;
+import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
+
+//     private LoginPage login;
 
     @Test
     public void testLoginSuccess() {
 
-        // Open website
-        DriverManager.getDriver().get("https://www.saucedemo.com/");
+        LoginPage loginPage = new LoginPage();
 
-        // Input username
-        DriverManager.getDriver().findElement(By.id("user-name"))
-                .sendKeys("standard_user");
-
-        // Input password
-        DriverManager.getDriver().findElement(By.id("password"))
-                .sendKeys("secret_sauce");
-
-        // Click login
-        DriverManager.getDriver().findElement(By.id("login-button"))
-                .click();
-    }
+        loginPage.open();
+        loginPage.login("standard_user", "secret_sauce");
+        // Verify
+        assert loginPage.isInventoryDisplayed();    }
 }
