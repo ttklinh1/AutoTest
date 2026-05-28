@@ -20,10 +20,11 @@ public class LoginPage {
     private By password = By.id("password");
     private By loginBtn = By.id("login-button");
     private By inventoryContainer = By.id("inventory_container");
+    public static final String BASE_URL =
+        ConfigReader.get("base.url");
     // Action
     public void open() {
-        driver.get(ConfigReader.get("base.url"));
-        // driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
     }
 
     public void enterUsername(String user) {
