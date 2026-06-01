@@ -3,9 +3,12 @@ package pages;
 import driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.LoggerFactory;
 
 import config.ConfigReader;
+import utils.Log;
 import utils.WaitUtils;
+import org.slf4j.Logger;
 
 public class LoginPage {
 
@@ -14,7 +17,8 @@ public class LoginPage {
     public LoginPage() {
         this.driver = DriverManager.getDriver();
     }
-
+    private static final Logger log =
+        Log.getLogger(LoginPage.class);
     // Locator
     private By username = By.id("user-name");
     private By password = By.id("password");
@@ -29,6 +33,7 @@ public class LoginPage {
 
     public void enterUsername(String user) {
         WaitUtils.waitForElementVisible(username);
+        log.info("Entering username: {}", username);
         driver.findElement(username).sendKeys(user);
     }
 
@@ -39,6 +44,7 @@ public class LoginPage {
 
     public void clickLogin() {
         WaitUtils.waitForElementVisible(loginBtn);
+        log.info("Clicking Login button");
         driver.findElement(loginBtn).click();
     }
 
@@ -51,6 +57,7 @@ public class LoginPage {
 
     public boolean isInventoryDisplayed() {
         WaitUtils.waitForElementVisible(inventoryContainer);
+        log.info("Checking if inventory is displayed");
         return driver.findElement(inventoryContainer).isDisplayed();
     }
 }
