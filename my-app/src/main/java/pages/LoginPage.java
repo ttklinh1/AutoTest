@@ -3,7 +3,6 @@ package pages;
 import driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.slf4j.LoggerFactory;
 
 import config.ConfigReader;
 import utils.Log;
