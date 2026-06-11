@@ -1,0 +1,4 @@
+my-app/target/
+my-app/target/classes/
+my-app/target/classes/base/
+my-app/target/classes/config/ConfigReader.class
