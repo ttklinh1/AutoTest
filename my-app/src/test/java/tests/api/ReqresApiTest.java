@@ -2,13 +2,15 @@ package tests.api;
 
 import io.restassured.RestAssured;
 import utils.BaseApiTest;
+import utils.RetryAnalyzer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ReqresApiTest extends BaseApiTest {
 
-    @Test
+    @Test(retryAnalyzer =
+        RetryAnalyzer.class)
     public void getUserTest() {
 
         int statusCode =
