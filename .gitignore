@@ -3,3 +3,6 @@ my-app/target/classes/
 my-app/target/classes/base/
 my-app/target/classes/config/ConfigReader.class
 my-app/target/surefire-reports/TestSuite.txt
+my-app/.vscode/settings.json
+my-app/allure-results/
+my-app/logs/test-execution.log

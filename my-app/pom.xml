@@ -157,7 +157,7 @@
 
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>testng-api.xml</suiteXmlFile>
+                <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
         </plugin>

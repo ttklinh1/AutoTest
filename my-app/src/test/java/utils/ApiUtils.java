@@ -9,7 +9,7 @@ public class ApiUtils {
     successResponse() {
 
         return new ResponseSpecBuilder()
-                .expectStatusCode(200)
+                .expectStatusCode(201)
                 .build();
     }
 }

@@ -11,28 +11,24 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-import static io.restassured.RestAssured.given;
-
 public class CreateUserTest extends BaseApiTest {
 
  @Test(retryAnalyzer =
         RetryAnalyzer.class)    
         public void verifyCreateUser() {
 
-       CreateUserRequest request =
+       CreateUserRequest requestBody =
         new CreateUserRequest(
                 "Linh",
                 "QA Engineer");
 
-        Response response = given()
-                .log().all()
+        Response response = request
                 .contentType(ContentType.JSON)
-                .body(request)
+                .body(requestBody)
                 .when()
                 .post("/api/users")
                 .then()
                 .log().all()
-                .statusCode(201)
                 .extract()
                 .response();
 

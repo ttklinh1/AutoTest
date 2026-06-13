@@ -1,6 +1,5 @@
 package tests.api;
 
-import io.restassured.RestAssured;
 import utils.BaseApiTest;
 import utils.RetryAnalyzer;
 
@@ -14,20 +13,20 @@ public class ReqresApiTest extends BaseApiTest {
     public void getUserTest() {
 
         int statusCode =
-                RestAssured
-                        .given()
-                        .when()
-                        .get("/api/users/2")
-                        .then()
-                        .extract()
-                        .statusCode();
+                  request
+                  .when()
+                .get("/api/users/2")
+                .then()
+                .log().all()
+                .extract()
+                .statusCode();
 
         Assert.assertEquals(statusCode, 200);
-        RestAssured
-                .given()
+        request
                 .when()
                 .get("/api/users/2")
                 .then()
+                .log().all()
                 .statusCode(200)
                 .body("data.id", org.hamcrest.Matchers.equalTo(2))
                 .body("data.email",
