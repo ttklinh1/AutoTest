@@ -17,9 +17,10 @@ private static final Logger log =
 
     @Test(dataProvider = "loginUsers",
           dataProviderClass = LoginDataProvider.class)
+
     public void loginTest(LoginData user) {
         log.info("===== START LOGIN TEST =====");
-
+    
         LoginPage loginPage =
                 new LoginPage();
         loginPage.open();

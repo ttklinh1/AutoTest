@@ -6,3 +6,4 @@ my-app/target/surefire-reports/TestSuite.txt
 my-app/.vscode/settings.json
 my-app/allure-results/
 my-app/logs/test-execution.log
+my-app/.vscode/settings.json

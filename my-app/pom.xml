@@ -38,13 +38,6 @@
         <scope>compile</scope>
     </dependency>
 
-    <!-- WebDriverManager -->
-    <dependency>
-        <groupId>io.github.bonigarcia</groupId>
-        <artifactId>webdrivermanager</artifactId>
-        <version>6.1.0</version>
-    </dependency>
-
     <!-- SLF4J API -->
     <dependency>
         <groupId>org.slf4j</groupId>
@@ -150,18 +143,19 @@
           </configuration>
         </plugin>
 
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.5.4</version>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.5.4</version>
 
-            <configuration>
+          <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                  <suiteXmlFile>
+                      ${suiteXmlFile}
+                  </suiteXmlFile>
               </suiteXmlFiles>
-            </configuration>
+          </configuration>
         </plugin>
-
       </plugins>
     </pluginManagement>
   </build>
