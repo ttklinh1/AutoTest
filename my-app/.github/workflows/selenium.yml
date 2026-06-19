@@ -35,7 +35,9 @@ jobs:
       - name: Execute Tests
         run: |
           mvn clean test \
-          -Dbrowser=${{ matrix.browser }}
+          -Dbrowser=chrome \
+          -Dexecution.type=remote \
+          -Dgrid.url=http://localhost:4444
 
       - name: Generate Allure Report
         if: always()
@@ -55,3 +57,10 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
+
+    services:
+      selenium:
+        image: selenium/standalone-chrome:4.34.0
+        ports:
+          - 4444:4444
+    

@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 public class BaseTest {
@@ -22,7 +23,7 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     @Parameters("browser")
     public void setup(
-            @Optional("chrome") String browser) {
+            @Optional("chrome") String browser) throws MalformedURLException {
 
         String browserName =
                 System.getProperty("browser", browser);
