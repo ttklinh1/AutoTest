@@ -2,6 +2,13 @@ pipeline {
 
     agent any
 
+    triggers {
+        
+        githubPush()
+
+        cron('H 1 * * *')
+    }
+
     tools {
 
         jdk 'JDK21'
@@ -15,7 +22,7 @@ pipeline {
             steps {
 
                 git branch: 'main',
-                    url: 'https://github.com/your-org/selenium-framework.git'
+                    url: 'https://github.com/ttklinh1/AutoTest.git'
             }
         }
 
@@ -27,15 +34,39 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Tests UI') {
 
             steps {
 
                 sh '''
                 mvn clean test \
-                -Dbrowser=chrome \
+                "-DsuiteXmlFile=src/test/resources/testng.xml" \
                 -Dexecution.type=remote \
-                -Dgrid.url=http://localhost:4444
+                -Dgrid.url=http://selenium-hub:4444
+                '''
+            }
+        }
+
+        stage('Run Tests API') {
+
+            steps {
+
+                sh '''
+                mvn clean test \
+                "-DsuiteXmlFile=src/test/resources/testng-api.xml" \
+                -Dexecution.type=remote \
+                -Dgrid.url=http://selenium-hub:4444
+                '''
+            }
+        }
+        stage('Nightly Regression') {
+
+            steps {
+
+                sh '''
+                mvn clean test \
+                "-DsuiteXmlFile=src/test/resources/testng-api.xml" \
+                -Dexecution.type=remote
                 '''
             }
         }
@@ -57,6 +88,13 @@ pipeline {
                 jdk: '',
                 results: [[path: 'allure-results']]
             )
+        }
+        success {
+            echo 'Automation tests completed successfully'
+        }
+
+        failure {
+            echo 'Automation tests failed'
         }
     }
 }
