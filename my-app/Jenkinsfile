@@ -11,7 +11,7 @@ pipeline {
 
     tools {
 
-        jdk 'JDK21'
+        jdk 'JDK26'
         maven 'Maven3'
     }
 
@@ -31,6 +31,8 @@ pipeline {
             steps {
 
                 sh 'mvn clean compile'
+                bat 'mvn -version'
+                bat 'mvn clean test'
             }
         }
 
@@ -55,7 +57,6 @@ pipeline {
                 mvn clean test \
                 "-DsuiteXmlFile=src/test/resources/testng-api.xml" \
                 -Dexecution.type=remote \
-                -Dgrid.url=http://selenium-hub:4444
                 '''
             }
         }
